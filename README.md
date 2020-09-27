@@ -10,7 +10,7 @@
 -   Works with a single file component principle. HTML, JS and CSS in a single Vue.component file
 -   Reactivity system based on ES6 Proxies (since v3, v2 uses Object.defineProperty/Getters/Setters)
 -   Tightly integrated and well maintained ecosystem.
-    -   vuex (redux but better)
+    -   vuex
     -   vue-router
     -   vue-cli (wow!)
     -   vue-devtools (chrome addon)
