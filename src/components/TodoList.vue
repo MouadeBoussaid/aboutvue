@@ -1,5 +1,5 @@
 <template>
-  <h1>Todoist wannabe</h1>
+  <h1>TodoList</h1>
   <form @submit.prevent="addTodo">
     <label>New Todo</label>
     <input v-model="newTodo" name="newTodo" />
