@@ -1,55 +1,50 @@
 <template>
-  <h1>TodoList</h1>
-  <form @submit.prevent="addTodo">
-    <label>New Todo</label>
-    <input v-model="newTodo" name="newTodo" />
-    <button>Add Todo</button>
-  </form>
-
-  <ul>
-    <li v-for="(todo, index) in todosList" :key="todo.id" class="todo">
-      <h3 :class="{ done: todo.done }" @click="toggleDone(todo)">
-        {{ todo.content }}
-      </h3>
-      <button @click="removeTodo(index)">Remove Todo</button>
-    </li>
-  </ul>
+  <div>
+    <h1>TodoList</h1>
+    <form @submit.prevent="addTodo">
+      <label>New Todo</label>
+      <input v-model="newTodo" name="newTodo" />
+      <button>Add Todo</button>
+    </form>
+    <ul>
+      <li v-for="(todo, index) in todosList" :key="todo.id" class="todo">
+        <h3 :class="{ done: todo.done }" @click="toggleDone(todo)">
+          {{ todo.content }}
+        </h3>
+        <button @click="removeTodo(index)">Remove Todo</button>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-// Vue v3
-import { ref } from "vue";
+// Vue v2 with Options API
 import { v4 as uuid } from "uuid";
 
 export default {
-  setup() {
-    const newTodo = ref("");
-    const todosList = ref([]);
-
-    const addTodo = () => {
-      todosList.value.push({
+  data() {
+    return {
+      newTodo: "",
+      todosList: []
+    };
+  },
+  methods: {
+    addTodo() {
+      this.todosList.push({
         id: uuid(),
         done: false,
-        content: newTodo.value
+        content: this.newTodo
       });
-      newTodo.value = "";
-    };
-
-    const toggleDone = todo => {
+      this.newTodo.value = "";
+    },
+    toggleDone(todo) {
       todo.done = !todo.done;
-    };
-
-    const removeTodo = index => {
-      todosList.value.splice(index, 1);
-    };
-    return {
-      todosList,
-      newTodo,
-      addTodo,
-      toggleDone,
-      removeTodo
-    };
-  }
+    },
+    removeTodo(index) {
+      this.todosList.splice(index, 1);
+    }
+  },
+  computed: {}
 };
 </script>
 
