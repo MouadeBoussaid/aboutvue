@@ -27,7 +27,7 @@
         </v-col>
 
         <v-col cols="12" sm="2">
-          <v-text-field v-model="output" disabled></v-text-field>
+          <v-text-field v-model="outputCalc" disabled></v-text-field>
         </v-col>
         <v-col cols="12" sm="2">
           <v-btn
@@ -82,9 +82,25 @@ export default {
     }
   },
   computed: {
-    // outputCalc() {
-    //   return this.inputField1 * this.inputField2;
-    // },
+    outputCalc() {
+      let operatorFn;
+      switch (this.operator) {
+        case "+":
+          operatorFn = (x, y) => parseInt(x) + parseInt(y);
+          break;
+        case "x":
+          operatorFn = (x, y) => parseInt(x) * parseInt(y);
+          break;
+        case "-":
+          operatorFn = (x, y) => parseInt(x) - parseInt(y);
+          break;
+        case "/":
+          operatorFn = (x, y) => parseInt(x) / parseInt(y);
+          break;
+      }
+
+      return operatorFn(this.inputField1, this.inputField2);
+    },
     mathOperator() {
       return {
         "+": (x, y) => parseInt(x) + parseInt(y),
