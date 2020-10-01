@@ -68,21 +68,14 @@ export default {
       inputField2: 0,
       calcData: [],
       operators: ["x", "-", "+", "/"],
-      operator: "x",
-      output: 0
+      operator: "x"
     };
   },
   methods: {
     saveCalc() {
-      this.output = this.mathOperator[this.operator](
-        this.inputField1,
-        this.inputField2
-      );
-      this.calcData.push(this.output);
-    }
-  },
-  computed: {
-    outputCalc() {
+      this.calcData.push(this.calculate(this.inputField1, this.inputField2));
+    },
+    calculate(x, y) {
       let operatorFn;
       switch (this.operator) {
         case "+":
@@ -98,16 +91,12 @@ export default {
           operatorFn = (x, y) => parseInt(x) / parseInt(y);
           break;
       }
-
-      return operatorFn(this.inputField1, this.inputField2);
-    },
-    mathOperator() {
-      return {
-        "+": (x, y) => parseInt(x) + parseInt(y),
-        x: (x, y) => parseInt(x) * parseInt(y),
-        "-": (x, y) => parseInt(x) - parseInt(y),
-        "/": (x, y) => parseInt(x) / parseInt(y)
-      };
+      return operatorFn(x, y);
+    }
+  },
+  computed: {
+    outputCalc() {
+      return this.calculate(this.inputField1, this.inputField2);
     }
   }
 };
