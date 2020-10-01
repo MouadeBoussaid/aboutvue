@@ -6,34 +6,35 @@
 
 ### What does that mean?
 
--   Views are pure HTML combined with Javascript expressions {{ }} and directives comparable with Angular. ngFor == v-for. Makes use of a virtual DOM like React
--   Works with a single file component principle. HTML, JS and CSS in a single Vue.component file
--   Reactivity system based on ES6 Proxies (since v3, v2 uses Object.defineProperty/Getters/Setters)
--   Tightly integrated and well maintained ecosystem.
-    -   vuex
-    -   vue-router
-    -   vue-cli (wow!)
-    -   vue-devtools (chrome addon)
-    -   many more
--   Has many control libraries such as Vuetify, Quasar, Element UI, Bootstrap, Vue Material, UI5 webcomponents...
--   Support for Typescript (improved in v3)
+- Views are pure HTML combined with Javascript expressions {{ }} and directives comparable with Angular. ngFor == v-for. Makes use of a virtual DOM like React
+- Works with a single file component principle. HTML, JS and CSS in a single Vue.component file
+- Reactivity system based on ES6 Proxies (since v3, v2 uses Object.defineProperty/Getters/Setters)
+- Tightly integrated and well maintained ecosystem.
+  - vuex
+  - vue-router
+  - vue-cli (wow!)
+  - vue-devtools (chrome addon)
+  - many more
+- Has many control libraries such as Vuetify, Quasar, Element UI, Bootstrap, Vue Material, UI5 webcomponents...
+- Support for Typescript (improved in v3)
 
 ### Vue / SAP UI5
 
--   Opiniated frameworks
--   Two-way binding
--   Vue is very light weight (core is 10kb) , whereas UI5 is not.
--   Vue is 100% opensource
--   Performance difference
+- Opiniated frameworks
+- Two-way binding
+- Vue is very light weight (core is 10kb) , whereas UI5 is not.
+- Vue has many controls just like UI5, however less business controls
+- Vue is 100% opensource
+- Performance difference
 
 ## What will we be doing?
 
-| Exercise       | Description        | Branch         |
-| -------------- | ------------------ | -------------- |
-| [Intro to Vue] | Intro to vue       | introtovue     |
-| [Exercise one] | Options API v2     | optionsapi     |
-| [Exercise two] | Composition API v3 | compositionapi |
-| [Demo]         | UI5 and Vue        | demo           |
+| Topic               | Description          | Branch                     |
+| ------------------- | -------------------- | -------------------------- |
+| [Intro to Vue]      | Intro to Vue         | master                     |
+| [Components]        | Intro to SFC         | components                 |
+| [Exercise]          | Small exercise       | components_exercise        |
+| [Exercise solution] | Solution to exercise | components_exercise_result |
 
 ## Documentation
 
@@ -42,6 +43,6 @@
 [vue github](https://github.com/vuejs)
 
 [intro to vue]: https://github.com/mouadeboussaid/aboutvue
-[exercise one]: https://github.com/mouadeboussaid/aboutvue
-[exercise two]: https://github.com/mouadeboussaid/aboutvue
-[demo]: https://github.com/mouadeboussaid/aboutvue
+[components]: https://github.com/MouadeBoussaid/aboutvue/tree/components
+[exercise]: https://github.com/MouadeBoussaid/aboutvue/tree/components_exercise
+[exercise solution]: https://github.com/MouadeBoussaid/aboutvue/tree/components_exercise_result
