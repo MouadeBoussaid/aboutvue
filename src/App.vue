@@ -20,10 +20,6 @@ export default {
 
   components: {
     Calculator
-  },
-
-  data: () => ({
-    //
-  })
+  }
 };
 </script>
